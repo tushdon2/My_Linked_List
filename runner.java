@@ -1,4 +1,4 @@
-package My_Linked_List;
+package My_Linked_List_Java;
 
 class runner{
     static boolean hasLoop(mySinglyLinkedList m) {

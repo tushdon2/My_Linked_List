@@ -1,4 +1,4 @@
-package My_Linked_List;
+package My_Linked_List_Java;
 
 class mySinglyLinkedList <E>{
 
