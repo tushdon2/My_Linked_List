@@ -1,5 +1,7 @@
 package My_Linked_List_Java;
 
+import java.lang.reflect.Array;
+
 class mySinglyLinkedList <E>{
 
     Node head;
@@ -184,5 +186,17 @@ class mySinglyLinkedList <E>{
             temp1 = temp1.next;
         }
         temp.next = null;
+    }
+
+    E[] toArray(){
+        int l = length();
+        E[] array = (E[])(Array.newInstance(head.data.getClass(), l));
+        Node temp = head;
+
+        for (int i = 0; i < l; i++){
+            array[i] = temp.data;
+            temp = temp.next;
+        }
+        return array;
     }
 }

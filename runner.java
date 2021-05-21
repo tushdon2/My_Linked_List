@@ -25,7 +25,7 @@ class runner{
     }
 
 	public static void main(String[] args) throws NoElementFoundException, EmptyLinkedListException, LoopDetectedException {
-        mySinglyLinkedList <Integer> s = new mySinglyLinkedList();
+        mySinglyLinkedList <Integer> s = new mySinglyLinkedList<>();
         s.add(12);
 //        System.out.println(s.head);
         s.add(13);
@@ -59,6 +59,9 @@ class runner{
 //        System.out.println(hasLoop(s));
 //        createLoopAt(2, s);
 //        System.out.println(hasLoop(s));
+//        Integer[] i = s.toArray();
+//        for (int j = 0; j < 3; j++) i[j]++;
+//        System.out.println(i[0] + " " + i[1] + " " + i[2]);
 
         //By Tushar Sahu
 

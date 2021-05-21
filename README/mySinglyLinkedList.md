@@ -2,7 +2,7 @@
 
 This file contains the class ```mySinglyLinkedList```. A Singly linked List can be made by creating an object of this class as:
 
-```mySinglyLinkedList<E> object = new mySinglyLinkedList();``` where E is data type of the objects to be stored in the Linked List.
+```mySinglyLinkedList<E> object = new mySinglyLinkedList()<>;``` where E is data type of the objects to be stored in the Linked List.
 
 Eg. ```E``` can be ```Integer``` for creating a Linked List to store integers.
 
@@ -52,3 +52,5 @@ This class contains the following members:
   Edits the current data of node at index: ```index``` to ```data```. Throws ```NoElementFoundException``` if there is no node at the passed index.
 * ##### ```reverse()```
   Reverses the linked list. Throws ```EmptyLinkedListException``` if the linked list is empty.
+* ##### ```toArray()```
+  Converts the linked list to an array. 
