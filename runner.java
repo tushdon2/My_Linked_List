@@ -15,8 +15,8 @@ class runner{
         return false;
     }
 
-    static void createLoopAt(int index, mySinglyLinkedList m) throws NoElementFound, LoopDetected {
-        if (hasLoop(m)) throw new LoopDetected("The Linked List is already Looped");
+    static void createLoopAt(int index, mySinglyLinkedList m) throws NoElementFoundException, LoopDetectedException {
+        if (hasLoop(m)) throw new LoopDetectedException("The Linked List is already Looped");
         mySinglyLinkedList.Node temp = m.traverseTo(index);
 
         mySinglyLinkedList.Node temp1 = temp;
@@ -24,7 +24,7 @@ class runner{
         temp1.next = temp;
     }
 
-	public static void main(String[] args) throws NoElementFound, EmptyLinkedList, LoopDetected {
+	public static void main(String[] args) throws NoElementFoundException, EmptyLinkedListException, LoopDetectedException {
         mySinglyLinkedList <Integer> s = new mySinglyLinkedList();
         s.add(12);
 //        System.out.println(s.head);

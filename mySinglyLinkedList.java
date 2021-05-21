@@ -35,14 +35,14 @@ class mySinglyLinkedList <E>{
         head = null;
     }
 
-    Node traverseTo(int index) throws NoElementFound{
+    Node traverseTo(int index) throws NoElementFoundException {
         Node temp = head;
         int i;
         for (i = 0; i < index; i++){
             if (temp == null) break;
             else temp = temp.next;
         }
-        if (temp == null) throw new NoElementFound("There is no element at index: " + i);
+        if (temp == null) throw new NoElementFoundException("There is no element at index: " + i);
         return temp;
     }
 
@@ -93,7 +93,7 @@ class mySinglyLinkedList <E>{
         head.next = temp;
     }
 
-    void insert(int index, E data) throws NoElementFound {
+    void insert(int index, E data) throws NoElementFoundException {
         if (index == 0){
             insertAtFront(data);
             return;
@@ -107,13 +107,13 @@ class mySinglyLinkedList <E>{
         toInsert.next = temp1;
     }
 
-    void popAtFront() throws EmptyLinkedList{
-        if (isEmpty()) throw new EmptyLinkedList();
+    void popAtFront() throws EmptyLinkedListException {
+        if (isEmpty()) throw new EmptyLinkedListException();
         else head = head.next;
     }
 
-    void popAtBack() throws EmptyLinkedList{
-        if (isEmpty()) throw new EmptyLinkedList();
+    void popAtBack() throws EmptyLinkedListException {
+        if (isEmpty()) throw new EmptyLinkedListException();
 
         Node temp = head;
         if (temp.next == null) {
@@ -126,7 +126,7 @@ class mySinglyLinkedList <E>{
         temp.next = null;
     }
 
-    void pop (int index) throws NoElementFound, EmptyLinkedList{
+    void pop (int index) throws NoElementFoundException, EmptyLinkedListException {
         if (index == 0) {
             popAtFront();
             return;
@@ -134,7 +134,7 @@ class mySinglyLinkedList <E>{
 
         Node temp = traverseTo(index - 1);
 
-        if (temp.next == null) throw new NoElementFound("There is no element at index: " + index);
+        if (temp.next == null) throw new NoElementFoundException("There is no element at index: " + index);
         else{
             Node temp1 = temp.next;
             temp.next = temp1.next;
@@ -142,12 +142,12 @@ class mySinglyLinkedList <E>{
         }
     }
 
-    E getElementAt(int index) throws NoElementFound{
+    E getElementAt(int index) throws NoElementFoundException {
         Node temp = traverseTo(index);
         return temp.data;
     }
 
-    int getIndexOf(E e) throws NoElementFound{
+    int getIndexOf(E e) throws NoElementFoundException {
         int count = 0;
         Node temp = head;
 
@@ -155,7 +155,7 @@ class mySinglyLinkedList <E>{
             temp = temp.next;
             count++;
         }
-        if (temp == null) throw new NoElementFound("There is no element with data: " + e);
+        if (temp == null) throw new NoElementFoundException("There is no element with data: " + e);
         else return count;
     }
 
@@ -163,18 +163,18 @@ class mySinglyLinkedList <E>{
         try{
             if (getIndexOf(data) > -1) return true;
             else return false;
-        }catch (NoElementFound e) {
+        }catch (NoElementFoundException e) {
             return false;
         }
     }
 
-    void setElementAt(int index, E data) throws NoElementFound {
+    void setElementAt(int index, E data) throws NoElementFoundException {
         Node temp = traverseTo(index);
         temp.data = data;
     }
 
-    void reverse() throws EmptyLinkedList{
-        if (isEmpty()) throw new EmptyLinkedList();
+    void reverse() throws EmptyLinkedListException {
+        if (isEmpty()) throw new EmptyLinkedListException();
 
         Node temp = head;
         Node temp1 = head.next;
