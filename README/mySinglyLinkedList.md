@@ -6,6 +6,8 @@ This file contains the class ```mySinglyLinkedList```. A Singly linked List can 
 
 Eg. ```E``` can be ```Integer``` for creating a Linked List to store integers.
 
+The Linked List follows zero based indexing.
+
 Implementation can be found in the ```main``` method of ```runner``` class in the [runner.java](../runner.java) file.
 
 This class contains the following members:
@@ -25,23 +27,23 @@ This class contains the following members:
 * ##### ```print()```
   Prints the data in the linked list. Shows ```The Linked List is Empty``` if the linked list is empty.
 * ##### ```traverseTo(int index)```
-  Returns the node which is at index: ```index``` (follows zero based indexing). Throws ```NoElementFoundException``` if there is no node at the passed index.
+  Returns the node at index: ```index```. Throws ```NoElementFoundException``` if there is no node at the passed index.
 * ##### ```length()```
   Returns the length of the linked list.
 * ##### ```add(E data)```
-  Adds a node at the end of the linked list with data ```data```.
+  Adds a node at the end of the linked list with data: ```data```.
 * ##### ```insertAtFront(E data)```
-  Inserts a node at the front of the linked list with data ```data```.
+  Inserts a node at the front of the linked list with data: ```data```.
 * ##### ```insert(int index, E data)```
-  Inserts a node at index: ```index``` (follows zero based indexing) of the linked list with data ```data```. Throws ```NoElementFoundException``` if there is no node before the passed index.
+  Inserts a node at index: ```index``` of the linked list with data ```data```. Throws ```NoElementFoundException``` if there is no node before the passed index.
 * ##### ```popAtFront()```
   Removes the node at the start of the linked list. Throws ```EmptyLinkedListException``` if the linked list is empty.
 * ##### ```popAtBack()```
   Removes the node at the end of the linked list. Throws ```EmptyLinkedListException``` if the linked list is empty.
 * ##### ```pop (int index)```
-  Removes the node at index: ```index``` (follows zero based indexing) of the linked list. Throws ```NoElementFoundException``` if there is no node before the passed index. Throws ```EmptyLinkedListException``` if the linked list is empty and ```index == 0```.
+  Removes the node at index: ```index``` of the linked list. Throws ```NoElementFoundException``` if there is no node before the passed index. Throws ```EmptyLinkedListException``` if the linked list is empty and ```index == 0```.
 * ##### ```getElementAt(int index)```
-  Returns the data at index: ```index``` (follows zero based indexing) of the linked list. Throws ```NoElementFoundException``` if there is no node at the passed index.
+  Returns the data at index: ```index``` of the linked list. Throws ```NoElementFoundException``` if there is no node at the passed index.
 * ##### ```getIndexOf(E e)```
   Returns the index at which data ```e``` occurs for the first time. Throws ```NoElementFoundException``` if there is no node with data ```e```.
 * ##### ```contains(E data)```
