@@ -26,6 +26,8 @@ This class contains the following members:
   Checks if the lnked list is empty.
 * ##### ```print()```
   Prints the data in the linked list. Shows ```The Linked List is Empty``` if the linked list is empty.
+* ##### ```clear()```
+  Clears all the data stored in the linked list (makes ```head``` point to ```null```).
 * ##### ```traverseTo(int index)```
   Returns the node at index: ```index```. Throws ```NoElementFoundException``` if there is no node at the passed index.
 * ##### ```length()```
@@ -53,4 +55,4 @@ This class contains the following members:
 * ##### ```reverse()```
   Reverses the linked list. Throws ```EmptyLinkedListException``` if the linked list is empty.
 * ##### ```toArray()```
-  Converts the linked list to an array. 
+  Returns an array containing the data of the linked list. 
