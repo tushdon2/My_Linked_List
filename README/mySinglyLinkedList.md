@@ -2,9 +2,9 @@
 
 This file contains the class ```mySinglyLinkedList```. A Singly linked List can be made by creating an object of this class as:
 
-```mySinglyLinkedList<E> object = new mySinglyLinkedList()<>;``` where E is data type of the objects to be stored in the Linked List.
+```mySinglyLinkedList<E> object = new mySinglyLinkedList<>();``` where E is data type of the objects to be stored in the Linked List.
 
-Eg. ```E``` can be ```Integer``` for creating a Linked List to store integers.
+E.g. ```E``` can be ```Integer``` for creating a Linked List to store integers.
 
 The Linked List follows zero based indexing.
 
@@ -13,17 +13,17 @@ Implementation can be found in the ```main``` method of ```runner``` class in th
 This class contains the following members:
 
 * #### ```head```
-  It's an object of ```Node``` nested class and will point to the starting node of the Linked List (if not empty else it will point to ```null```).
+  It's an object of ```Node``` nested class and will point to the starting node of the Linked List (if empty it will point to ```null```).
 * #### ```Node```
   It is a nested class inside the class ```mySinglyLinkedList```. All the nodes of the linked list are objects of this class. It has the following members:
     * ##### ```data```
       It is an object of type ```E``` and stores the data in the node.
     * ##### ```next```
-      It is an object of type ```Node``` and points to the next node (if the current node is not the last node else it will point to ```null```).
+      It is an object of type ```Node``` and points to the next node (if the current node is the last node it will point to ```null```).
     * ##### constructor
       When an object of class ```Node``` is created, it will store the passed data in the ```data``` member and make the ```next``` member point to ```null```.
 * #### ```isEmpty()```
-  Checks if the lnked list is empty.
+  Checks if the linked list is empty.
 * ##### ```print()```
   Prints the data in the linked list. Shows ```The Linked List is Empty``` if the linked list is empty.
 * ##### ```clear()```

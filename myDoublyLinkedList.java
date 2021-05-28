@@ -2,15 +2,16 @@ package My_Linked_List_Java;
 
 import java.lang.reflect.Array;
 
-public class mySinglyLinkedList <E>{
-
+class myDoublyLinkedList <E> {
     Node head;
 
     class Node{
+        Node prev;
         E data;
         Node next;
 
-        public Node(E data){
+        public Node(E data) {
+            prev = null;
             this.data = data;
             next = null;
         }
@@ -25,6 +26,7 @@ public class mySinglyLinkedList <E>{
             System.out.println("The Linked List is Empty");
             return;
         }
+
         Node temp = head;
         while(temp != null) {
             System.out.print(temp.data + " ");
@@ -37,34 +39,17 @@ public class mySinglyLinkedList <E>{
         head = null;
     }
 
-    Node traverseTo(int index) throws NoElementFoundException {
+    Node traverseTo(int index) throws NoElementFoundException{
         Node temp = head;
         int i;
         for (i = 0; i < index; i++){
             if (temp == null) break;
             else temp = temp.next;
         }
+
         if (temp == null) throw new NoElementFoundException("There is no element at index: " + i);
         return temp;
     }
-
-//    int indexOf(Node node){
-//        int count = 0;
-//        Node temp = head;
-//        while (temp != node) {
-//            temp = temp.next;
-//            count++;
-//        }
-//        return count;
-//    }
-//
-//    Node traverseTill(E e){
-//        Node temp = head;
-//        while (temp != null && temp.data != e){
-//            temp = temp.next;
-//        }
-//        return temp;
-//    }
 
     int length(){
         int length = 0;
@@ -87,45 +72,49 @@ public class mySinglyLinkedList <E>{
             temp = temp.next;
         }
         temp.next = new Node(data);
+        temp.next.prev = temp;
     }
 
     void insertAtFront(E data){
-        Node temp = head;
-        head = new Node(data);
-        head.next = temp;
+        head.prev = new Node(data);
+        head.prev.next = head;
+        head = head.prev;
     }
 
-    void insert(int index, E data) throws NoElementFoundException {
+    void insert(int index, E data) throws NoElementFoundException{
         if (index == 0){
             insertAtFront(data);
             return;
         }
 
-        Node toInsert = new Node(data);
         Node temp = traverseTo(index - 1);
+        if (temp.next == null) {
+            temp.next = new Node(data);
+            temp.next.prev = temp;
+            return;
+        }
 
-        Node temp1 = temp.next;
+        Node toInsert = new Node(data);
+        temp.next.prev = toInsert;
+        toInsert.next = temp.next;
+        toInsert.prev = temp;
         temp.next = toInsert;
-        toInsert.next = temp1;
     }
 
     void popAtFront() throws EmptyLinkedListException {
         if (isEmpty()) throw new EmptyLinkedListException();
         else head = head.next;
+        head.prev = null;
     }
 
     void popAtBack() throws EmptyLinkedListException {
         if (isEmpty()) throw new EmptyLinkedListException();
 
         Node temp = head;
-        if (temp.next == null) {
-            head = null;
-            return;
-        }
-        while (temp.next.next != null) {
+        while (temp.next != null) {
             temp = temp.next;
         }
-        temp.next = null;
+        temp.prev.next = null;
     }
 
     void pop (int index) throws NoElementFoundException, EmptyLinkedListException {
@@ -134,14 +123,14 @@ public class mySinglyLinkedList <E>{
             return;
         }
 
-        Node temp = traverseTo(index - 1);
-
-        if (temp.next == null) throw new NoElementFoundException("There is no element at index: " + index);
-        else{
-            Node temp1 = temp.next;
-            temp.next = temp1.next;
-            temp1.next = null;
+        Node temp = traverseTo(index);
+        if (temp.next == null) {
+            temp.prev.next = null;
+            return;
         }
+
+        temp.next.prev = temp.prev;
+        temp.prev.next = temp.next;
     }
 
     E getElementAt(int index) throws NoElementFoundException {

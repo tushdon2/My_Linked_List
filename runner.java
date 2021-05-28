@@ -24,7 +24,7 @@ class runner{
         temp1.next = temp;
     }
 
-	public static void main(String[] args) throws NoElementFoundException, EmptyLinkedListException, LoopDetectedException {
+	public static void main(String[] args){
         mySinglyLinkedList <Integer> s = new mySinglyLinkedList<>();
         s.add(12);
 //        System.out.println(s.head);
@@ -62,6 +62,20 @@ class runner{
 //        Integer[] i = s.toArray();
 //        for (int j = 0; j < 3; j++) i[j]++;
 //        System.out.println(i[0] + " " + i[1] + " " + i[2]);
+//--------------------------------------------------------------------------------------------
+        myDoublyLinkedList <Integer> m = new myDoublyLinkedList<>();
+        m.add(99);
+        m.add(89);
+        m.add(69);
+//        m.clear();
+//        m.insertAtFront(2);
+        m.insert(3, 3);
+        m.pop(2);
+        m.reverse();
+        m.print();
+//        Integer[] i = m.toArray();
+//        System.out.println(i[0]+" " + i[1]+ " " + i[2]);
+//        System.out.println(m.length());
 
         //By Tushar Sahu
 
