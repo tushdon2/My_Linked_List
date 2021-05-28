@@ -1,5 +1,5 @@
 # [runner.java](../runner.java)
-The ```main``` method of the class [```runner```](../runner.java) implements various methods of [```mySinglyLinkedList```](../mySinglyLinkedList.java) class.
+The ```main``` method of the class [```runner```](../runner.java) implements various methods of [```mySinglyLinkedList```](../mySinglyLinkedList.java) and [```myDoublyLinkedList```](../myDoublyLinkedList.java) class.
 
 The ```runner``` class also has other member methods as follows:
 * ##### ```hasLoop(mySinglyLinkedList m)```

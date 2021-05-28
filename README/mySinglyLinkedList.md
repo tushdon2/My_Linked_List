@@ -8,7 +8,7 @@ E.g. ```E``` can be ```Integer``` for creating a Linked List to store integers.
 
 The Linked List follows zero based indexing.
 
-Implementation can be found in the ```main``` method of ```runner``` class in the [runner.java](../runner.java) file.
+Implementation can be found in the ```main``` method of ```runner``` class in the [runner.java](https://github.com/tushdon2/My_Linked_List_Java/blob/84b250038fd73b9913a7afd6c4066bb8514c2dae/runner.java#L28) file.
 
 This class contains the following members:
 
